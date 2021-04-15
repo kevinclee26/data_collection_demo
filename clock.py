@@ -7,7 +7,7 @@ import os
 sched=BlockingScheduler()
 fetch_freq_mins=1
 
-SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL') or "sqlite:///db.sqlite"
+SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL').replace('://', 'ql://') or "sqlite:///db.sqlite"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 Base.metadata.create_all(engine)
 
