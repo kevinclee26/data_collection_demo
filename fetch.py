@@ -30,7 +30,7 @@ def fetch_data(engine):
 				'lat': each_event['geography']['coordinates'][1], 
 				'lon': each_event['geography']['coordinates'][0]
 				}
-			session.add(Events(**new_event))
+			session.add(Events(**new_event)) # Event(event_id=event_id, time=time, headline=headline, etc)
 		session.commit()
 		print(f'SUCCESS')
 	else: 
