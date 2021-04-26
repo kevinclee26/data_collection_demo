@@ -43,3 +43,4 @@ if str(response.status_code)[0]=='2':
 else: 
 	print('FAILED')
 session.close() # close the session
+engine.dispose() # close connection pool
